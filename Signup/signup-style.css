@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Nunito";
+    src: url(../Nunito-Font/static/Nunito-Regular.ttf);
+}
+
+*{
+    font-family: "Nunito";
+}
+
+:root{
+    --horizontal-color: #B47B5F;
+    --box-shadow: rgba(0, 0, 0, 0.212) 0px 5px 18px;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    height: 100%;
+    width: 50%;
+}
+
+form{
+    height: 58%;
+    width: 45%;
+    border-radius: 13px;
+    box-shadow: var(--box-shadow);
+}
+
+.logo{
+    height: 12.5vh;
+}
+
+.input-containers{
+    width: 83%;
+}
+
+.input-containers hr{
+    width: 100%;
+    border: 0.1px solid var(--horizontal-color);
+}
+
+form button{
+    width: 85%;
+}
+
+/* .input-group:nth-child(1) .input-group-text > img{
+    height: 110%;
+} */
