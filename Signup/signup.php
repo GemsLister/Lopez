@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,43 +11,45 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-    <main class="d-flex justify-content-center align-items-center">
-        <form action="" class="d-flex flex-column justify-content-center align-items-center">
+    <main class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <?php if (isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $_SESSION['error']; ?>
+                <?php unset($_SESSION['error']); ?>
+            </div>
+        <?php endif; ?>
+        <form action="signup-validate.php" method="POST" class="d-flex flex-column justify-content-center align-items-center">
             <!-- Logo -->
             <figure class="d-flex flex-column align-items-center">
                 <img src="../images/logo.png" alt="logo" class="logo">
             </figure>
 
-            <div class="input-containers d-flex flex-column justify-content-center align-items-center">
-                <!-- First and Last Name div -->
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="firstName" placeholder="First Name" aria-label="First Name">
-                    <input type="text" class="form-control" name="lastName" placeholder="Last Name" aria-label="Last Name">
+            <!-- Input container -->
+            <div class="input-containers d-flex flex-column justify-content-center align-items-center gap-3">
+                <!-- Firs Name and Last Name -->
+                <div class="input-group">
+                    <input type="text" class="form-control" name="firstName" placeholder="First Name" aria-label="First Name" require>
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name" aria-label="Last Name" require>
                 </div>
-                
-                <!-- Username div -->
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
+                <!-- Username -->
+                <input type="text" class="form-control" name="userName" placeholder="Username" aria-describedby="basic-addon1" require>
+                <!-- Email -->
+                <input type="email" class="form-control" name="email" placeholder="Email" aria-describedby="basic-addon1" require>
+                <!-- Password -->
+                <input type="password" class="form-control" name="password" placeholder="Password" aria-describedby="basic-addon1" require>
+                <!-- Confirm Password -->
+                <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" aria-describedby="basic-addon1" require>
 
-                <!-- Email div -->
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-                </div>
-
-                <!-- Password div -->
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-                </div>
-
-                <!-- Confirm Password div -->
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Confirm Password" aria-describedby="basic-addon1">
-                </div>                
-                <hr>
-                <button class="btn btn-primary mt-2 mb-2">Sign up</button>
+                <button type="submit" class="btn btn-primary mt-3">Sign up</button>
+                <!-- Hyperlink for login -->
+                <p>Already have an account? <a href="../Login/login.php">Login</a></p>
             </div>
         </form>
-    </main>
+    </main>    
 </body>
 </html>
+<!-- XAMPP + Live Reload -->
+<!-- npm install -g browser-sync
+browser-sync start --proxy "localhost/Login-Signup/Signup/signup.php" --files "E:/xampp/htdocs/Login-Signup/Signup" -->
+
+

@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "Nunito";
+    src: url(../Nunito-Font/static/Nunito-Regular.ttf);
+}
+
+:root{
+    --dashboard-caption: #A04B16;
+    --sidebar-color: #E9CB9A;
+    --main-header-color: #e9cb9a9d;
+    --font-color: #635948;
+    --list-hover: #63594836;
+}
+
+
+html body{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 19% 1fr;
+    font-family: "Nunito";
+}
+
+aside{
+    grid-row: 1/3;
+    background-color: var(--sidebar-color);
+}
+
+/* Logo style */
+figure img{
+    height: 12.5vh;
+}
+
+.header-figure figcaption{
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--dashboard-caption);
+}
+
+/* Menus */
+section:nth-child(2) li{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    list-style: none;
+}
+
+section:nth-child(2) a:hover{
+    transition: ease 0.5s;
+    cursor: pointer;
+    background-color: var(--list-hover);
+}
+
+section:nth-child(2) figure{
+    display: flex;
+    align-items: center;
+}
+
+section:nth-child(2) figure img{
+    margin: 0 1.2vw 0 0;
+    height: 4vh;
+}
+
+section:nth-child(2) li a{
+    height: 100%;
+    width: 100%;
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 1.5vh 0 0 1vw;
+    border-radius: 10px;
+}
+
+section:nth-child(2) .active{
+    background-color: var(--list-hover);
+}
+
+/* Main content */
+main{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 1fr;
+}
+
+.main-header{
+    grid-row: 1;
+    background-color: var(--main-header-color);
+}
+
+.main-header .search{
+    width: 20%;
+    margin: 0 0 0 1vw;
+}
+
+.main-header .user-profile{
+    margin: 0 2vw 0 0 ;
+}
+
+.main-content{
+    grid-row: 2;
+    display: flex;
+}
+
+.add-user{
+    height: 100%;
+}
+
+.card{
+    margin: 2vh 0 0 0.9vw;
+}
+
+.card:nth-child(1){
+    height: 95%;
+    width: 90%;
+}
+
+tbody figure img{
+    height: 20px;
+}
+
+tbody .btn{
+    height: 43px;
+}
+
+tbody td{
+    padding: 2vh 0 0 0;
+    border: 1px solid black;
+}

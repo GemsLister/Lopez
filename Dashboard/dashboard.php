@@ -1,0 +1,147 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <aside class="h-100 d-flex flex-column gap-4">
+        <div class="header-figure d-flex justify-content-center">
+            <figure class="d-flex flex-column mt-5">
+                <figcaption>Dashboard</figcaption>
+                <img src="../images/logo.png" alt="dashboard-logo">
+            </figure>
+        </div>
+        <!-- Dashboard menu -->
+            <section>
+            <ul class="d-flex flex-column gap-3">
+                <li>
+                    <a href="">
+                        <figure>
+                            <img src="../images/dashboard.svg" alt="dashboard-icon">
+                            <figcaption>Dashboard</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <figure>
+                            <img src="../images/product.svg" alt="dashboard-icon">
+                            <figcaption>Product</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <figure>
+                            <img src="../images/reports.svg" alt="dashboard-icon">
+                            <figcaption>Reports</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="active">
+                        <figure>
+                            <img src="../images/accounts.svg" alt="dashboard-icon">
+                            <figcaption>Accounts</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <figure>
+                            <img src="../images/settings.svg" alt="dashboard-icon">
+                            <figcaption>Settings</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Login/login.php">
+                        <figure>
+                            <img src="../images/logout.svg" alt="dashboard-icon">
+                            <figcaption>Logout</figcaption>
+                        </figure>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+        
+    <main>
+        <div class="main-header d-flex justify-content-between align-items-center">
+            <input type="text" class="form-control search" id="user-profile" aria-describedby="searchbar" placeholder="Search...">
+            <label for="user-profile" class="form-label user-profile">James Lester Lopez</label>
+        </div>
+
+        <div class="main-content d-flex">
+            <!-- First Column: Add User Form -->
+            <div class="col-md-3">
+                <article class="card">
+                    <div class="card-header">
+                        ADD USER
+                    </div>
+                    <div class="card-body">
+                        <form id="userInfoForm">
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" required id="stud_id" placeholder="Student ID" aria-label="Student ID" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <!-- <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-account"></i></span> -->
+                                <input type="text" class="form-control" id="fname" placeholder="First Name" aria-label="First Name" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" id="lname" placeholder="Last Name" aria-label="Last Name" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" id="age" placeholder="Age" aria-label="Age" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="address" placeholder="Address" aria-label="Address" aria-describedby="basic-addon2">
+                            </div>
+                            <div class="input-group mb-3">
+                                <button style="width: 100%; border-radius: 5px; margin-right: 20px;" class="btn btn-primary" type="button" id="addUserBtn" onclick="addUser()"> Add User</button>
+                                <button style="width: 100%; border-radius: 5px; margin-right: 20px; display: none;" class="btn btn-primary" type="button" id="updateUserBtn" onclick="updateUser()">Update User</button>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Second Column: User Table -->
+            <div class="col-md-9">
+                <div id="liveAlert"></div>
+                <div class="card">
+                    <div class="card-body">
+                        <input type="text" style="width: 100%; margin-top: 20px; margin-bottom: 20px;" class="form-control" id="search" placeholder="Search ..." aria-label="Search" aria-describedby="basic-addon2">
+                        <table id="userTable" class="table table-stripped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID Number</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Age</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userTableBody" style="font-size: 17px;">
+                                <!--- this is where the data will be added -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="jquery3.7.1.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

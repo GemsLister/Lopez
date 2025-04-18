@@ -27,12 +27,13 @@ main{
 form{
     height: 62%;
     width: 45%;
+    gap: 5.5rem;
     border-radius: 13px;
     box-shadow: var(--box-shadow);
 }
 
 .logo{
-    height: 12.5vh;
+    height: 17vh;
 }
 
 .input-containers{

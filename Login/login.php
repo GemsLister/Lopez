@@ -1,0 +1,48 @@
+<?php
+    session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login-style.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <main class="d-flex flex-column justify-content-center align-items-center">
+        <?php if (isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $_SESSION['error']; ?>
+                <?php unset($_SESSION['error']); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['success'])): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $_SESSION['success']; ?>
+                <?php unset($_SESSION['success']); ?>
+            </div>
+        <?php endif; ?>
+        <form action="../Login/login-validate.php" method="POST" class="d-flex flex-column justify-content-center align-items-center">
+            <!-- Logo -->
+            <figure class="d-flex flex-column align-items-center">
+                <img src="../images/logo.png" alt="logo" class="logo">
+            </figure>
+            <!-- Input container -->
+            <div class="input-containers d-flex flex-column justify-content-center align-items-center gap-3">
+                <!-- Username -->
+                <input type="text" class="form-control" name="userName" placeholder="Username" aria-describedby="basic-addon1" require>
+                <!-- Password -->
+                <input type="password" class="form-control" name="password" placeholder="Password" aria-describedby="basic-addon1" require>
+                <button type="submit" class="btn btn-primary mt-3">Sign up</button>
+                <!-- Hyperlink for signup -->
+                <p class="mb-3">Don't have an account? <a href="../Signup/signup.php">Signup</a></p>
+                <p>Forgot Password? <a href="#">Click here!</a></p>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
