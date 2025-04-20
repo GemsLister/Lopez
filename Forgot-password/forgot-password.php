@@ -2,11 +2,10 @@
 
 session_start();
 
-require '../includes/database.php';
+require '../includes/db.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
 
 require '../vendor/autoload.php';
 

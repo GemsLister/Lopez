@@ -2,7 +2,7 @@
 
 session_start();
 
-require '../includes/database.php';
+require '../includes/db.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $userName = $_POST['userName'];
