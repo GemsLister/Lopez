@@ -123,3 +123,62 @@ tbody td{
     padding: 2vh 0 0 0;
     border: 1px solid black;
 }
+
+@media screen and (width > 768px) and (width <= 1025px) {
+    html body{
+        grid-template-columns: 24% 1fr;
+    }
+
+    /* Logo style */
+    figure img{
+        height: 12.5vh;
+    }
+
+    .header-figure figcaption{
+        font-size: 1.3rem;
+    }
+
+    section:nth-child(2) li{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        list-style: none;
+    }
+    
+    /* Menus */
+    section:nth-child(2) li{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        list-style: none;
+    }
+
+    section:nth-child(2) figure img{
+        margin: 0 1.5vw 0 0;
+    }
+
+    section:nth-child(2) figcaption{
+        font-size: 15px;
+    }
+
+    section:nth-child(2) li a{
+        padding: 1.7vh 0 0 1vw;
+    }
+
+    /* Main section */
+    .main-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .col-md-3{
+        grid-column: 1;
+        /* border: 1px solid brown; */
+        
+    }
+    
+    .col-md-9{
+        grid-column: 2;
+        /* border: 1px solid red; */
+    }
+}

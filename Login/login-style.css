@@ -43,3 +43,13 @@ form{
 form button{
     width: 100%;
 }
+
+@media screen and (width > 768px) and (width <= 1025px) {
+    main{
+        width: 40%;
+    }
+
+    form{
+        width: 100%;
+    }
+}

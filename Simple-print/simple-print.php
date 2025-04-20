@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Set footer and output PDF
     $mpdf->SetHTMLFooter('<div style="text-align: left;">Page {PAGENO} of {nbpg}</div>');
     $mpdf->WriteHTML($html);
-    $mpdf->Output('product-list.pdf', 'I');
+    $mpdf->Output('', 'I');
     exit();
 }
 ?>

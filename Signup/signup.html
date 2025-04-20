@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +9,6 @@
 </head>
 <body>
     <main class="d-flex flex-column justify-content-center align-items-center min-vh-100">
-        <?php if (isset($_SESSION['error'])): ?>
-            <div class="alert alert-danger" role="alert">
-                <?php echo $_SESSION['error']; ?>
-                <?php unset($_SESSION['error']); ?>
-            </div>
-        <?php endif; ?>
         <form action="signup-validate.php" method="POST" class="d-flex flex-column justify-content-center align-items-center">
             <!-- Logo -->
             <figure class="d-flex flex-column align-items-center">
@@ -49,4 +40,9 @@
 </body>
 </html>
 
-
+<!-- <?php if (isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $_SESSION['error']; ?>
+                <?php unset($_SESSION['error']); ?>
+            </div>
+<?php endif; ?> -->

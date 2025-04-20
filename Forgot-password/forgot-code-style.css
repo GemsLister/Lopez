@@ -33,3 +33,13 @@ form figcaption{
 figure img{
     height: 14vh;
 }
+
+@media screen and (width > 768px) and (width <= 1025px) {
+    form{
+        width: 43vw;
+    }
+
+    form .code-input{
+        width: 35vw;
+    }
+}
