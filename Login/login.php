@@ -40,7 +40,7 @@
                 <button type="submit" class="btn btn-primary mt-3">Sign up</button>
                 <!-- Hyperlink for signup -->
                 <p class="mb-3">Don't have an account? <a href="../Signup/signup.php">Signup</a></p>
-                <p>Forgot Password? <a href="#">Click here!</a></p>
+                <p>Forgot Password? <a href="../Forgot-password/forgot-password.php">Click here!</a></p>
             </div>
         </form>
     </main>

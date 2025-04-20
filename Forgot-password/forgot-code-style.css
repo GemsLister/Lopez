@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Nunito";
+    src: url(../Nunito-Font/static/Nunito-Regular.ttf);
+}
+
+:root{
+    --box-shadow: rgba(0, 0, 0, 0.212) 0px 5px 18px;
+}
+
+
+html body{
+    height: 100vh;
+    font-family: "Nunito";
+}
+
+form{
+    padding: 1.5rem 0 2rem 0;
+    width: 24vw;
+    border-radius: 13px;
+    box-shadow: var(--box-shadow);
+}
+
+form .code-input{
+    width: 18vw;
+}
+
+form figcaption{
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+
+/* Logo */
+figure img{
+    height: 14vh;
+}
